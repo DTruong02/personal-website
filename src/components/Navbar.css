@@ -1,0 +1,55 @@
+
+.li-style {
+  margin-right:0.5rem;
+  opacity: 0;
+  animation: fadeInTop ease 0.5s both;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 4s;
+  transition-property: color;
+}
+
+.li-style:after {
+  content: "";
+  pointer-events: none;
+  bottom: -2px;
+  left: 50%;
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: #fff;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: width, left;
+}
+
+.li-style:hover:after {
+width: 90%;
+left: 5%;
+}
+
+.nav-list li:nth-child(1) {
+  animation-delay: 0.5s;
+} 
+
+.nav-list li:nth-child(2) {
+  animation-delay: 1s;
+}
+
+.nav-list li:nth-child(3) {
+  animation-delay: 1.5s;
+}
+
+.nav-list li:nth-child(4) {
+  animation-delay: 2s;
+}
+
+@keyframes fadeInTop {
+  from {
+      opacity: 0;
+      transform: translate3d(0, -100%, 0);
+  }
+  to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+   }
+}

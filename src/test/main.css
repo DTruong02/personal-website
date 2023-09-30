@@ -1,0 +1,117 @@
+  a {
+    text-decoration: none;
+  }
+
+  .wrapper {
+    /*background: purple;*/
+  }
+
+  .navbar {
+    background: #051923;
+    /*height: 80px;*/
+    padding: 1.2rem;
+  }
+
+  .navbar-logo {
+    animation: fadeInTop ease 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 100rem;
+    margin: 0 auto;
+  }
+
+  .navbar-menu {
+
+  }
+
+  .nav-list {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-item:not(:last-child) {
+    /*outline-color: red;
+    outline-style: dotted;*/
+    margin-right:0.5rem;
+  } 
+  
+  .nav-item {
+    /*transform: translate(0px 0px);
+    opacity: 1;
+    margin-right:0.5rem;
+    animation: fadeInAnimation ease 2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    */
+    opacity: 0;
+  }
+
+  .nav-link {
+    color: white;
+    padding: 0.5rem;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+/*
+  li {
+    margin-right:0.5rem;
+    opacity: 0;
+    animation: fadeInTop ease 0.5s both;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 4s;
+    transition-property: color;
+  }
+  li:after {
+    content: "";
+    pointer-events: none;
+    bottom: -2px;
+    left: 50%;
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: #fff;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: width, left;
+  }
+*/
+  .nav-list .nav-item:nth-child(1) {
+    animation-delay: 0.5s;
+  } 
+
+  .nav-list li:nth-child(2) {
+    animation-delay: 1s;
+  }
+
+  .nav-list li:nth-child(3) {
+    animation-delay: 1.5s;
+  }
+
+  .nav-list li:nth-child(4) {
+    animation-delay: 2s;
+  }
+  
+
+  @keyframes fadeInTop {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -100%, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+     }
+  }
