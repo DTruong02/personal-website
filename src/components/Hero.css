@@ -1,0 +1,52 @@
+header {
+    background: blue;
+    width: 100%;
+    display: flex;
+    min-height: 95vh;
+    position: relative;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    background-color: red;
+}
+
+p, h3, h1 {
+    white-space: pre;
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 20%;
+    font-weight: bold;
+    color: white;
+}
+
+p {
+    font-size: 1em;
+}
+
+span {
+    color: purple;    
+    font-size: 1em;
+}
+
+.intro {
+    position: absolute;
+    top: 40%;
+    display: inline-block;
+    width: 40%;
+}
+
+.icons {
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+}
+  
