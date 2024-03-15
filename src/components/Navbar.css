@@ -6,6 +6,7 @@ a {
   background: #051923;
   /*height: 80px;*/
   padding: 1.2rem;
+  position: relative;
 }
 
 .navbar-container {

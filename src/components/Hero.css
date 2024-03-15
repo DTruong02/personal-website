@@ -1,9 +1,16 @@
 header {
-    background: blue;
     width: 100%;
     display: flex;
     min-height: 95vh;
-    position: relative;
+}
+
+video {
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+  position: relative;
+  z-index: -1;
+  outline: red solid 1px;
 }
 
 .flex-container {
@@ -13,7 +20,6 @@ header {
     padding: 1rem 2rem;
     position: fixed;
     width: 100%;
-    z-index: 100;
     background-color: red;
 }
 
@@ -26,6 +32,7 @@ p, h3, h1 {
     margin-inline-start: 20%;
     font-weight: bold;
     color: white;
+    position: relative;
 }
 
 p {
@@ -35,6 +42,7 @@ p {
 span {
     color: purple;    
     font-size: 1em;
+    position: relative;
 }
 
 .intro {
@@ -42,11 +50,30 @@ span {
     top: 40%;
     display: inline-block;
     width: 40%;
+    z-index: 2;
 }
 
 .icons {
     position: absolute;
-    bottom: 10%;
+    bottom: 7%;
     left: 5%;
+    z-index: 2;
 }
-  
+
+.icon {
+    margin-right: 10px;
+    color: white;
+}
+
+.icon:hover {
+    color: red;
+}
+
+.left-overlay {
+    opacity: 50%;
+    background-color: black;
+    width: 35%;
+    height: 95vh;
+    position: absolute;
+    z-index: 1;
+}

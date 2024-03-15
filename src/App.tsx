@@ -18,8 +18,8 @@ function App() {
 		<>
 		
 		<Router>
-			<Navbar />
-      <Hero />
+			<Navbar/>
+      <Hero/>
       <section style={sectionStyle}></section>
 			{/*<Switch>
 				<Route path='/' exact />
