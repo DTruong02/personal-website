@@ -3,6 +3,7 @@ import {EmblaOptionsType} from "embla-carousel";
 import './Projects.css';
 import Code1580 from '../assets/Code_1580.png';
 import Project_2048 from '../assets/Project_2048.png';
+import Chat_app from '../assets/Chat_app.png';
 
 
 const OPTIONS: EmblaOptionsType = { loop: true }
@@ -20,7 +21,7 @@ const PROJECTS = [
         title: "Real-time Chat Application",
         description: ["Real-time chat application built on the MERN stack", "Uses WebSocket for real-time communication", "Containerized with Docker for easy consistent deployment"],
         hyperlink: "https://react-chat-app-delta-eight.vercel.app/",
-        imageUrl: Code1580
+        imageUrl: Chat_app
     },
     {
         title: "2048 Clone",
