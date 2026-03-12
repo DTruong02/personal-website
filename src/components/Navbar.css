@@ -4,9 +4,12 @@ a {
 
 .navbar {
   background: #051923;
-  /*height: 80px;*/
-  padding: 1.2rem;
-  position: relative;
+  padding: 1.2rem 2rem; /* give some horizontal breathing room */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
 .navbar-container {
@@ -15,17 +18,29 @@ a {
   justify-content: space-between;
   max-width: 100rem;
   margin: 0 auto;
-  /*position: fixed;*/
+  padding: 0 1rem; /* responsive horizontal padding */
+}
+
+.navbar-menu {
+  padding-right: 2rem; /* ensure links don’t touch the screen edge */
 }
 
 .nav-list {
   display: flex;
   align-items: center;
+  padding-right: 1rem; /* extra breathing room inside list */
 }
 
 .nav-link {
   color: white;
   padding: 0.5rem;
+}
+
+.nav-link-button {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  font: inherit;
 }
 
 .navbar-logo {

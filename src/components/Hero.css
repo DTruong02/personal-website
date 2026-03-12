@@ -1,26 +1,19 @@
 header {
     width: 100%;
     display: flex;
-    min-height: 95vh;
+    height: 100vh; /* full viewport height */
+    overflow: hidden; /* prevent scrolling if children exceed */
+    position: relative; /* remain in document flow */
 }
 
 video {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  object-fit: cover;
   height: 100%;
-  position: relative;
-  z-index: -1;
-  outline: red solid 1px;
-}
-
-.flex-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    position: fixed;
-    width: 100%;
-    background-color: red;
+  object-fit: cover;
+  z-index: 1;
 }
 
 p, h3, h1 {
@@ -70,10 +63,12 @@ span {
 }
 
 .left-overlay {
-    opacity: 50%;
+    opacity: 0.5;
     background-color: black;
     width: 35%;
-    height: 95vh;
+    height: 100%;
     position: absolute;
+    top: 0;
+    left: 0;
     z-index: 1;
 }

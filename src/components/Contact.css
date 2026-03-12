@@ -1,0 +1,61 @@
+.contact-section {
+    position: relative;
+    background: #0C121C;
+    min-height: 55vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 2rem;
+}
+
+.contact-panel {
+    width: min(42rem, 100%);
+    background: linear-gradient(145deg, rgba(0, 66, 100, 0.95), rgba(5, 25, 35, 0.96));
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 1.5rem;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+    padding: 3rem;
+    text-align: left;
+}
+
+.contact-eyebrow {
+    margin: 0 0 1rem;
+    color: #7bdff2;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.contact-panel h2 {
+    margin: 0;
+    color: #ffffff;
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    line-height: 1.1;
+}
+
+.contact-copy {
+    margin: 1.5rem 0 2rem;
+    color: #d9f0ff;
+    line-height: 1.6;
+    white-space: normal;
+}
+
+.contact-cta {
+    border: 0;
+    border-radius: 999px;
+    background: #7bdff2;
+    color: #051923;
+    padding: 0.9rem 1.6rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(123, 223, 242, 0.28);
+}
+
+@media (max-width: 768px) {
+    .contact-panel {
+        padding: 2rem;
+    }
+}

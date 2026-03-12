@@ -1,0 +1,159 @@
+.contact-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: rgba(3, 10, 18, 0.78);
+    backdrop-filter: blur(10px);
+}
+
+.contact-backdrop {
+    position: absolute;
+    inset: 0;
+    border: 0;
+    background: transparent;
+    cursor: default;
+}
+
+.contact-modal {
+    position: relative;
+    width: min(48rem, 100%);
+    max-height: calc(100vh - 4rem);
+    overflow-y: auto;
+    border-radius: 1.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: linear-gradient(180deg, #0f2230 0%, #051923 100%);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+    padding: 2.5rem;
+    margin: 0;
+    z-index: 1;
+}
+
+.contact-modal::backdrop {
+    background: transparent;
+}
+
+.contact-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 2.75rem;
+    height: 2.75rem;
+    border: 0;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.contact-modal-eyebrow {
+    margin: 0 0 0.75rem;
+    color: #7bdff2;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
+.contact-modal h2 {
+    margin: 0;
+    color: #ffffff;
+    font-size: clamp(2rem, 4vw, 2.9rem);
+    line-height: 1.05;
+}
+
+.contact-modal-copy {
+    margin: 1rem 0 2rem;
+    color: #d9f0ff;
+    line-height: 1.6;
+    white-space: normal;
+}
+
+.contact-form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.contact-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: #ffffff;
+}
+
+.contact-field span {
+    color: #d9f0ff;
+    font-size: 0.95rem;
+}
+
+.contact-field input,
+.contact-field textarea {
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.06);
+    color: #ffffff;
+    padding: 0.9rem 1rem;
+}
+
+.contact-field input:focus,
+.contact-field textarea:focus {
+    outline: 2px solid rgba(123, 223, 242, 0.75);
+    outline-offset: 1px;
+}
+
+.contact-field-full {
+    grid-column: 1 / -1;
+}
+
+.contact-actions {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.contact-submit,
+.contact-secondary {
+    border: 0;
+    border-radius: 999px;
+    cursor: pointer;
+    padding: 0.9rem 1.4rem;
+}
+
+.contact-submit {
+    background: #7bdff2;
+    color: #051923;
+}
+
+.contact-secondary {
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+}
+
+.contact-submit-message {
+    grid-column: 1 / -1;
+    margin: 0;
+    color: #7bdff2;
+    white-space: normal;
+}
+
+@media (max-width: 768px) {
+    .contact-overlay {
+        padding: 1rem;
+    }
+
+    .contact-modal {
+        padding: 1.5rem;
+        max-height: calc(100vh - 2rem);
+    }
+
+    .contact-form {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-actions {
+        flex-direction: column;
+    }
+}

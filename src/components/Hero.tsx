@@ -3,7 +3,7 @@ import { Typewriter } from 'react-simple-typewriter'
 import './Hero.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons'
-import heroVideo from '../public/videos/video.mp4';
+import heroVideo from '../assets/video.mp4';
 
 
 function Hero() {
@@ -12,9 +12,10 @@ function Hero() {
       <head>
         <script src="https://kit.fontawesome.com/4e3aea9a30.js" crossOrigin="anonymous"></script>
       </head>
-      <header className='hero-container'>
-        <video autoPlay loop muted/>
+      <header className='hero-container' id="home">
+        <video autoPlay loop muted>
           <source src={heroVideo} type='video/mp4'/>
+        </video>
         <div className='left-overlay'></div>
         <div className="intro">
             <h3>Hello, my name is</h3>
@@ -35,7 +36,7 @@ function Hero() {
               </span>
 
             </a>
-            <a href="https://www.github.com">
+            <a href="https://github.com/DTruong02">
               <span className='icon'>
                 <FontAwesomeIcon icon={faGithub}/>
               </span>

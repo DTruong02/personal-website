@@ -1,0 +1,194 @@
+.projects-section {    
+    position: relative;
+    display: block;
+    padding: 6rem 0rem 0rem 0rem;
+    background: #0C121C;
+    min-height: 75vh;
+    z-index: 0;
+}
+
+.project-left-overlay {
+    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+    width: 30%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    order: 0;
+}
+
+.overlay-text {
+    position: relative;
+    z-index: 3;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
+}
+
+.embla {
+    flex: 1 1 0%;
+    order: 1;
+    position: relative;
+    z-index: 2;
+    max-width: 65vw;
+    margin-left: 30%; /* push embla to the right of overlay */
+    --slide-height: 75vh;
+    --slide-spacing: 2px;
+    --slide-size: 100%;
+    padding-left: 2.2%;
+}
+.embla__viewport {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+  touch-action: pan-y pinch-zoom;
+  margin-left: calc(var(--slide-spacing) * -1);
+}
+.embla__slide {
+  flex: 0 0 var(--slide-size);
+  min-width: 10vw;
+  padding-left: var(--slide-spacing);
+}
+.embla__slide__number {
+  border: 0.2rem solid var(--detail-medium-contrast);
+  border-radius: 1.8rem;
+  font-size: 4rem;
+  font-weight: 600;
+  display: flex;
+  align-items: stretch;
+  gap: 2rem; /* space between text and image */
+  height: var(--slide-height);
+  user-select: none;
+  background-color: #004264;
+  padding: 1rem;
+}
+
+.slide-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+.slide-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2.5rem;
+  flex: 0 0 45%;
+  overflow: hidden;
+}
+
+.slide-description {
+  margin-inline-start: 0%;
+  font-size: 1.2rem;
+  color: #fff;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  line-height: 1.4;
+}
+
+.slide-image {
+  padding-left: 2%;
+  padding-top: 2%;
+  flex: 1;
+  height: 95%;
+  width: 95%;
+  object-fit: cover;
+  border-radius: 1.8rem;
+}
+.embla__controls {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  justify-content: space-between;
+  gap: 0.6rem;
+  margin-top: 0.2rem;
+}
+.embla__buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.3rem;
+  align-items: center;
+}
+.embla__button {
+  -webkit-tap-highlight-color: rgba(var(--text-high-contrast-rgb-value), 0.5);
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  touch-action: manipulation;
+  display: inline-flex;
+  text-decoration: none;
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  border: 0.2rem solid var(--detail-medium-contrast);
+  width: 3.6rem;
+  height: 3.6rem;
+  z-index: 1;
+  border-radius: 50%;
+  color: var(--text-body);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(0deg);
+}
+.embla__button--disabled {
+  color: var(--detail-high-contrast);
+}
+.embla__button__svg {
+  width: 35%;
+  height: 35%;
+}
+.embla__dots {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: calc((2.6rem - 1.4rem) / 2 * -1);
+}
+.embla__dot {
+  -webkit-tap-highlight-color: rgba(var(--text-high-contrast-rgb-value), 0.5);
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  touch-action: manipulation;
+  display: inline-flex;
+  text-decoration: none;
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  width: 2.6rem;
+  height: 2.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  position: relative;
+}
+.embla__dot:before,
+.embla__dot:after {
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  content: '';
+}
+.embla__dot:before {
+  border: 0.2rem solid var(--detail-medium-contrast);
+}
+.embla__dot:after {
+  border: 0.2rem solid var(--text-body);
+  opacity: 0;
+}
+.embla__dot--selected:after {
+  opacity: 1;
+}
