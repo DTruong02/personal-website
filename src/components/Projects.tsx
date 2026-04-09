@@ -4,6 +4,9 @@ import './Projects.css';
 import Code1580 from '../assets/Code_1580.png';
 import Project_2048 from '../assets/Project_2048.png';
 import Chat_app from '../assets/Chat_app.png';
+import MLB from '../assets/MLB.png';
+import Webcam from '../assets/Webcam.png';
+
 
 
 const OPTIONS: EmblaOptionsType = { loop: true }
@@ -29,6 +32,16 @@ const PROJECTS = [
         hyperlink: "https://react-native-web-2048-clone.vercel.app/",
         imageUrl: Project_2048
     },
+    {
+        title: "Webcam Gesture Controller",
+        description: ["Webcam gesture controller that maps gestures to different actions", "Used OpenCV and MediaPipe to detect gestures", "Implemented the ability to control Govee lamps through LAN and Cloud API", "Allows for the ability to skip songs, turn on and off the lights, and more", "Implemented an arming gesture to prevent unnecessary activation" ],
+        imageUrl: Webcam
+    },
+    {
+        title: "Baseball Prediction Model",
+        description: ["Baseball prediction model built with Python and Scikit-learn", "Uses machine learning to predict the outcome of a baseball game based on a trained model", "Uses the MLB API and FanGraphs API to get the data"],
+        imageUrl: MLB
+    }
 
 ]
 
