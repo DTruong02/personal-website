@@ -1,22 +1,38 @@
-* {
-  font-family: Akkurat Mono, monospace;
-  font-size: 1.3rem;
-  font-weight: 900;
-}
-/*Might need to move the above text styling*/
-
-.App {
-  /*text-align: center;*/
-  background: #00a6fb;
-}
-
-.App-header {
-  background-color: #282c34;
+.app-shell {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+.ink-link {
+  color: var(--fg);
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  text-decoration-color: color-mix(in srgb, var(--fg) 28%, transparent);
+  transition: text-decoration-color 150ms ease, opacity 150ms ease;
+  outline: none;
+}
+
+.ink-link:hover,
+.ink-link:focus-visible {
+  text-decoration-color: currentColor;
+}
+
+.section-pad {
+  padding: clamp(4rem, 10vh, 7rem) clamp(1.5rem, 6vw, 5rem);
+}
+
+.section-title {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.35rem, 2.4vw, 1.75rem);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-transform: lowercase;
+}
+
+.section-lede {
+  margin: 0 0 2.5rem;
+  color: var(--muted);
+  max-width: 36rem;
 }

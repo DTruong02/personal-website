@@ -1,47 +1,55 @@
 import React from 'react';
 import './About.css';
 
-interface CardData {
-  title: string;
-  content: string[];
-}
-
-const infoCards: CardData[] = [
-  { title: 'Intro', content: ['Hey, I\'m Danny, I\'m a new grad coming from the University of Waterloo. ', 'I graduated in August 2025 with a Bachelor\'s degree in Mathematics with a major in Computational Mathematics. \
-                            I\'m passionate about software development, and I\'m always eager to learn new technologies and improve my skills. \
-                            '] },
-  { title: 'Hobbies', content: ['Outside of programming, I enjoy playing video games, going to the gym, and watching TV shows.', 'Current Watch list:', ' - Brooklyn 99', ' - The Witcher', ' - The Bear'] },
+const intro = [
+  "Hey, I'm Danny — a new grad from the University of Waterloo.",
+  'I graduated in August 2025 with a BMath in Computational Mathematics. I care about software that is clear, useful, and thoughtfully built.',
 ];
 
-const experienceCard = [' - Worked under Solution Architects to develop infrastructure solutions that included system design diagrams and PoC\'s', 
-                        ' - Developed infrastructure solution for API endpoint monitoring and managed deployment through Terraform',
-                        ' - Worked on data pipeline development for internal data analytics and reporting using Python and SQL',]
+const hobbies = [
+  'Outside of programming I like games, the gym, and TV.',
+  'Currently watching: Brooklyn 99, The Witcher, The Bear.',
+];
+
+const experience = [
+  'Worked with Solution Architects on infrastructure solutions, system design diagrams, and PoCs.',
+  'Built API endpoint monitoring infrastructure and managed deployment with Terraform.',
+  'Developed data pipelines for internal analytics and reporting with Python and SQL.',
+];
+
 function About() {
   return (
-    <section className="about-section" id="about">
-      <h2>About Me</h2>
-      <div className="cards">
-        {infoCards.map(card => (
-          <div key={card.title} className="card">
-            <h3 className="card-title">{card.title}</h3>
-            <p>
-              {card.content.map((line, index) => (
-                    <p className="slide-description" key={`${card.title}-${index}`}>
-                      {line}
-                    </p>
-              ))}
-            </p>
-          </div>
-        ))}
-      </div>
-      <div className="experience-card">Most Recent Work Experience: Application Engineer @ Purolator
-        <div>
-          {experienceCard.map((line) => (
-            <p className="experience-description">
+    <section className="about-section section-pad" id="about">
+      <h2 className="section-title">about</h2>
+      <p className="section-lede">A short sketch of who I am and what I&apos;ve been working on.</p>
+
+      <div className="about-grid">
+        <div className="about-block">
+          <h3 className="about-block-title">intro</h3>
+          {intro.map((line) => (
+            <p key={line} className="about-copy">
               {line}
             </p>
           ))}
+        </div>
 
+        <div className="about-block">
+          <h3 className="about-block-title">hobbies</h3>
+          {hobbies.map((line) => (
+            <p key={line} className="about-copy">
+              {line}
+            </p>
+          ))}
+        </div>
+
+        <div className="about-block about-block-wide">
+          <h3 className="about-block-title">recent work</h3>
+          <p className="about-role">Application Engineer @ Purolator</p>
+          <ul className="about-list">
+            {experience.map((line) => (
+              <li key={line}>{line}</li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>

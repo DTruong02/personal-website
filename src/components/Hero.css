@@ -1,74 +1,84 @@
-header {
-    width: 100%;
-    display: flex;
-    height: 100vh; /* full viewport height */
-    overflow: hidden; /* prevent scrolling if children exceed */
-    position: relative; /* remain in document flow */
-}
-
-video {
-  position: absolute;
-  top: 0;
-  left: 0;
+.hero {
+  position: relative;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
+  height: 100dvh;
+  min-height: 32rem;
+  overflow: hidden;
+  background: var(--bg);
 }
 
-p, h3, h1 {
-    white-space: pre;
-    display: block;
-    font-size: 1.17em;
-    margin-block-start: 0;
-    margin-block-end: 0;
-    margin-inline-start: 20%;
-    font-weight: bold;
-    color: white;
-    position: relative;
+.hero-pond {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
 }
 
-p {
-    font-size: 1em;
+.hero-content {
+  position: absolute;
+  z-index: 2;
+  left: clamp(1.25rem, 5vw, 4.5rem);
+  bottom: clamp(2.5rem, 11vh, 7.5rem);
+  max-width: min(36rem, 88vw);
+  pointer-events: none;
+  padding: 1.15rem 1.35rem 1.25rem;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  border: 0;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 0 48px color-mix(in srgb, var(--bg) 55%, transparent);
 }
 
-span {
-    color: purple;    
-    font-size: 1em;
-    position: relative;
+.hero-content a {
+  pointer-events: auto;
 }
 
-.intro {
-    position: absolute;
-    top: 40%;
-    display: inline-block;
-    width: 40%;
-    z-index: 2;
+.hero-greeting,
+.hero-name,
+.hero-typewriter,
+.hero-socials {
+  margin: 0;
+  font-weight: 400;
+  color: var(--fg);
 }
 
-.icons {
-    position: absolute;
-    bottom: 7%;
-    left: 5%;
-    z-index: 2;
+.hero-greeting {
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  opacity: 0.6;
+  margin-bottom: 0.4rem;
 }
 
-.icon {
-    margin-right: 10px;
-    color: white;
+.hero-name {
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  margin-bottom: 0.65rem;
 }
 
-.icon:hover {
-    color: red;
+.hero-typewriter {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
 }
 
-.left-overlay {
-    opacity: 0.5;
-    background-color: black;
-    width: 35%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
+.hero-typewriter-word {
+  color: var(--fg);
+}
+
+.hero-socials {
+  font-size: 0.8125rem;
+  letter-spacing: 0.02em;
+}
+
+.hero-socials-sep {
+  opacity: 0.4;
+}
+
+.hero-socials .ink-link {
+  opacity: 0.65;
+}
+
+.hero-socials .ink-link:hover,
+.hero-socials .ink-link:focus-visible {
+  opacity: 1;
 }

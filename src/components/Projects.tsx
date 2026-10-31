@@ -1,5 +1,6 @@
-import EmblaCarousel from "./EmblaCarousel";
-import {EmblaOptionsType} from "embla-carousel";
+import React from 'react';
+import { EmblaOptionsType } from 'embla-carousel';
+import EmblaCarousel from './EmblaCarousel';
 import './Projects.css';
 import Code1580 from '../assets/Code_1580.png';
 import Project_2048 from '../assets/Project_2048.png';
@@ -7,53 +8,64 @@ import Chat_app from '../assets/Chat_app.png';
 import MLB from '../assets/MLB.png';
 import Webcam from '../assets/Webcam.png';
 
-
-
-const OPTIONS: EmblaOptionsType = { loop: true }
-const SLIDE_COUNT = 2
-const SLIDES = Array.from({ length: SLIDE_COUNT }, (_, i) => i)
+const OPTIONS: EmblaOptionsType = { loop: true };
 
 const PROJECTS = [
-    {
-        title: "Algorithmic Trading Bot",
-        description: ["Automated trading bot for stock market analysis on S&P and NASDAQ", "Built on NinjaTrader's C# event-driven framework with custom tick granularity for the most precise analysis", "Integrated with major brokerage platforms", "Working on sentiment analysis using external news APIs"],
-        
-        imageUrl: Code1580
-    },
-    {
-        title: "Real-time Chat Application",
-        description: ["Real-time chat application built on the MERN stack", "Uses WebSocket for real-time communication", "Containerized with Docker for easy consistent deployment"],
-        hyperlink: "https://react-chat-app-delta-eight.vercel.app/",
-        imageUrl: Chat_app
-    },
-    {
-        title: "2048 Clone",
-        description: ["PoC clone of the popular 2048 game", "Built with React Native on Typescript", "Uses React Native Gesture Handler for smooth swipe controls"],
-        hyperlink: "https://react-native-web-2048-clone.vercel.app/",
-        imageUrl: Project_2048
-    },
-    {
-        title: "Webcam Gesture Controller",
-        description: ["Webcam gesture controller that maps gestures to different actions", "Used OpenCV and MediaPipe to detect gestures", "Implemented the ability to control Govee lamps through LAN and Cloud API", "Allows for the ability to skip songs, turn on and off the lights, and more", "Implemented an arming gesture to prevent unnecessary activation" ],
-        imageUrl: Webcam
-    },
-    {
-        title: "Baseball Prediction Model",
-        description: ["Baseball prediction model built with Python and Scikit-learn", "Uses machine learning to predict the outcome of a baseball game based on a trained model", "Uses the MLB API and FanGraphs API to get the data"],
-        imageUrl: MLB
-    }
-
-]
+  {
+    title: 'Algorithmic Trading Bot',
+    description: [
+      'Automated trading on S&P and NASDAQ via NinjaTrader C#.',
+      'Custom tick granularity and brokerage integrations.',
+      'Exploring sentiment analysis with news APIs.',
+    ],
+    imageUrl: Code1580,
+  },
+  {
+    title: 'Real-time Chat Application',
+    description: [
+      'MERN stack chat with WebSocket messaging.',
+      'Containerized with Docker for consistent deploys.',
+    ],
+    hyperlink: 'https://react-chat-app-delta-eight.vercel.app/',
+    imageUrl: Chat_app,
+  },
+  {
+    title: '2048 Clone',
+    description: [
+      'React Native + TypeScript clone of 2048.',
+      'Gesture Handler for smooth swipe controls.',
+    ],
+    hyperlink: 'https://react-native-web-2048-clone.vercel.app/',
+    imageUrl: Project_2048,
+  },
+  {
+    title: 'Webcam Gesture Controller',
+    description: [
+      'OpenCV + MediaPipe gesture mapping to actions.',
+      'Controls Govee lamps and media playback over LAN/cloud.',
+    ],
+    hyperlink: 'https://github.com/DTruong02/webcam_gesture_control',
+    imageUrl: Webcam,
+  },
+  {
+    title: 'Baseball Prediction Model',
+    description: [
+      'Python + scikit-learn game outcome predictions.',
+      'OpenAI / Ollama LLMs with MLB and FanGraphs data.',
+    ],
+    hyperlink: 'https://github.com/DTruong02/baseball-match-prediction',
+    imageUrl: MLB,
+  },
+];
 
 function Projects() {
-    return (
-        <section className="projects-section" id="projects">
-            <div className='project-left-overlay'>
-                <div className="overlay-text">Projects</div>
-            </div>
-            <EmblaCarousel slides={PROJECTS} options={OPTIONS} />
-        </section>
-    )
+  return (
+    <section className="projects-section section-pad" id="projects">
+      <h2 className="section-title">projects</h2>
+      <p className="section-lede">Selected work — swipe or use the controls to browse.</p>
+      <EmblaCarousel slides={PROJECTS} options={OPTIONS} />
+    </section>
+  );
 }
 
 export default Projects;

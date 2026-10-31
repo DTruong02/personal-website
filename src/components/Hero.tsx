@@ -1,50 +1,50 @@
-import React from 'react'
-import { Typewriter } from 'react-simple-typewriter'
+import React from 'react';
+import { Typewriter } from 'react-simple-typewriter';
+import { KoiPond } from './koi-pond';
 import './Hero.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons'
-import heroVideo from '../assets/video.mp4';
-
 
 function Hero() {
   return (
-    <>
-      <head>
-        <script src="https://kit.fontawesome.com/4e3aea9a30.js" crossOrigin="anonymous"></script>
-      </head>
-      <header className='hero-container' id="home">
-        <video autoPlay loop muted>
-          <source src={heroVideo} type='video/mp4'/>
-        </video>
-        <div className='left-overlay'></div>
-        <div className="intro">
-            <h3>Hello, my name is</h3>
-            <h1>Danny Truong.</h1>
-            <p>
-              I'm a <span><Typewriter
-                            words = {['programmer', 'developer', 'designer', 'student', 'learner']} 
-                            loop = {0} 
-                            cursor = {true}
-                            cursorBlinking = {true}/>
-                    </span>
-            </p>
-          </div>
-          <div className='icons'>
-            <a href="https://www.linkedin.com/in/dtruong02/">
-              <span className='icon'>
-                <FontAwesomeIcon icon={faLinkedinIn}/>
-              </span>
-
-            </a>
-            <a href="https://github.com/DTruong02">
-              <span className='icon'>
-                <FontAwesomeIcon icon={faGithub}/>
-              </span>
-            </a>
-          </div>
-      </header>
-    </>
-  )
+    <header className="hero" id="home">
+      <KoiPond className="hero-pond" />
+      <div className="hero-content" data-koi-ignore data-koi-avoid>
+        <p className="hero-greeting">Hello, my name is</p>
+        <h1 className="hero-name">Danny Truong.</h1>
+        <p className="hero-typewriter">
+          I&apos;m a{' '}
+          <span className="hero-typewriter-word">
+            <Typewriter
+              words={['programmer', 'developer', 'designer', 'student', 'learner']}
+              loop={0}
+              cursor
+              cursorBlinking
+            />
+          </span>
+        </p>
+        <p className="hero-socials">
+          <a
+            className="ink-link"
+            href="https://github.com/DTruong02"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            github
+          </a>
+          <span className="hero-socials-sep" aria-hidden="true">
+            {' / '}
+          </span>
+          <a
+            className="ink-link"
+            href="https://www.linkedin.com/in/dtruong02/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            linkedin
+          </a>
+        </p>
+      </div>
+    </header>
+  );
 }
 
-export default Hero
+export default Hero;
